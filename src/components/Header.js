@@ -29,12 +29,12 @@ const Header = () => {
 			<motion.div className="header-content">
 				<div className="header-text">
 					<h1 className="header-text-large">
-						<motion.div animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
+						<motion.span animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
 						<span className="the">The</span>
 						MaNDALoRIaN
 					</h1>
 					<p className="header-text-medium">
-						<motion.div animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
+						<motion.span animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
 						The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority
 						of the New Republic. After the stories of Jango and Boba Fett, another warrior emerges in the
 						Star Wars universe.

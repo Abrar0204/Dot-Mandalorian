@@ -64,7 +64,7 @@ const About = () => {
 
 	const backdropOverContentDiv = () => {
 		return (
-			<motion.div
+			<motion.span
 				className="backdrop"
 				ref={ref}
 				initial="hidden"
@@ -85,7 +85,18 @@ const About = () => {
 					{backdropOverContentDiv()}
 				</p>
 			</div>
-			<div className="about-image-container">{backdropOverContentDiv()}</div>
+			<div className="about-image-container">
+				{
+					<motion.div
+						className="backdrop"
+						ref={ref}
+						initial="hidden"
+						variants={imageBackdropVariants}
+						animate={animation}
+						transition={imageBackdropTransition}
+					/>
+				}
+			</div>
 			<div className="about-description">
 				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
 				<motion.img ref={ref} variants={textVariants} initial="hidden" animate={animation} src={grogu} />
