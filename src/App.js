@@ -1,11 +1,12 @@
+import About from './components/About';
 import Header from './components/Header';
 import Main from './components/Main';
 
 const App = () => {
 	return (
-		<div className="App">
+		<div className="app">
 			<Header />
-			<Main />
+			<About />
 		</div>
 	);
 };

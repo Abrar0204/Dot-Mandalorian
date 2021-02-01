@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import disneyLogo from '../res/svgs/Disney.svg';
-import hamburger from '../res/svgs/Menu.svg';
-import { motion, AnimatePresence, m } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const transition = {
 	type: 'tween',

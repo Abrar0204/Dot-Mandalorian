@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import AboutHeader from '../res/images/mando.png';
+import AboutHeader from '../res/images/mando 2.png';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
+import grogu from '../res/svgs/grogu.svg';
 const About = () => {
 	const animation = useAnimation();
 	const [ ref, inView, entry ] = useInView({ threshold: 0.1 });
@@ -19,32 +20,93 @@ const About = () => {
 
 	const imageBackdropVariants = {
 		hidden: {
-			height: 0
+			width: '100%'
 		},
 		visible: {
-			height: '40%'
+			width: '0%'
 		}
 	};
 	const imageBackdropTransition = {
-		duration: 0.5,
+		duration: 0.8,
 		type: 'tween',
-		ease: 'easeIn'
+		ease: 'easeOut'
 	};
 
-	const imageVariants = {
+	const lineVariants = {
 		hidden: {
-			y: 10,
-			opacity: 0
+			opacity: 0,
+			height: 0
 		},
 		visible: {
+			opacity: 1,
+			height: '20%',
+			transition: {
+				duration: 0.5,
+				ease: 'easeOut'
+			}
+		}
+	};
+	const textVariants = {
+		hidden: {
+			opacity: 0,
+			y: 30
+		},
+		visible: {
+			opacity: 1,
 			y: 0,
-			opacity: 1
+			transition: {
+				delay: 0.5,
+				duration: 0.7,
+				ease: 'easeOut'
+			}
 		}
 	};
 
+	const backdropOverContentDiv = () => {
+		return (
+			<motion.div
+				className="backdrop"
+				ref={ref}
+				initial="hidden"
+				variants={imageBackdropVariants}
+				animate={animation}
+				transition={imageBackdropTransition}
+			/>
+		);
+	};
+
 	return (
-		<div className="about">
-			<div className="backdrop" />
+		<section className="about">
+			<div className="about-header">
+				<h1>About{backdropOverContentDiv()}</h1>
+				<p>
+					Hello There, welcome to Dot Mandalorian where you can find all stuff related to the disney plus
+					series The Mandalorian.
+					{backdropOverContentDiv()}
+				</p>
+			</div>
+			<div className="about-image-container">{backdropOverContentDiv()}</div>
+			<div className="about-description">
+				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
+				<motion.img ref={ref} variants={textVariants} initial="hidden" animate={animation} src={grogu} />
+				<motion.p ref={ref} variants={textVariants} initial="hidden" animate={animation}>
+					Beginning five years after the events of Return of the Jedi and the fall of the Galactic Empire, The
+					Mandalorian follows Din Djarin, a lone Mandalorian bounty hunter in the outer reaches of the galaxy.
+				</motion.p>
+				<motion.p ref={ref} variants={textVariants} initial="hidden" animate={animation}>
+					He is hired by remnant Imperial forces to retrieve the child Grogu, but instead goes on the run to
+					protect the infant. While looking to reunite Grogu with his kind, they are pursued by Moff Gideon,
+					who wants to use Grogu's connection to the Force.
+				</motion.p>
+				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
+			</div>
+		</section>
+	);
+};
+
+export default About;
+{
+	/* <div className="backdrop" />
 			<div className="about-image-container">
 				<motion.img
 					ref={ref}
@@ -70,21 +132,7 @@ const About = () => {
 			</div>
 			<div className="about-description">
 				<div className="about-description-text">
-					<p>
-						Beginning five years after the events of Return of the Jedi and the fall of the Galactic Empire,
-						The Mandalorian follows Din Djarin, a lone Mandalorian bounty hunter in the outer reaches of the
-						galaxy.
-					</p>
-					<p>
-						He is hired by remnant Imperial forces to retrieve the child Grogu, but instead goes on the run
-						to protect the infant. While looking to reunite Grogu with his kind, they are pursued by Moff
-						Gideon, who wants to use Grogu's connection to the Force.
-					</p>
+					 
 				</div>
-				{/* <div className="backdrop" /> */}
-			</div>
-		</div>
-	);
-};
-
-export default About;
+			</div>  */
+}

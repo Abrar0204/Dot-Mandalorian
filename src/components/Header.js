@@ -3,6 +3,9 @@ import Navbar from './Navbar';
 
 import { motion } from 'framer-motion';
 
+import rottenTomatoes from '../res/images/rottenTomatoesFresh.png';
+import imdb from '../res/images/imdb.png';
+
 const transition = {
 	duration: 1.5
 };
@@ -23,39 +26,41 @@ const Header = () => {
 				transition={transition}
 			/>
 			<Navbar />
-			<motion.div
-				className="header-content"
-				initial={{ y: 100, opacity: 0 }}
-				animate={{ y: 0, opacity: 1, zIndex: 5 }}
-				transition={{
-					type: 'tween',
-					ease: 'easeOut',
-					delay: 1.5,
-					duration: 0.5
-				}}
-			>
+			<motion.div className="header-content">
 				<div className="header-text">
 					<h1 className="header-text-large">
-						{/* <motion.div
-							animate={{ width: '0%', height: '0%' }}
-							transition={{ duration: 1 }}
-							className="backdrop"
-						/> */}
+						<motion.div animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
 						<span className="the">The</span>
 						MaNDALoRIaN
 					</h1>
 					<p className="header-text-medium">
-						{/* <motion.div
-							animate={{ width: '0%', height: '0%' }}
-							transition={{ duration: 1 }}
-							className="backdrop"
-						/> */}
+						<motion.div animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
 						The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority
 						of the New Republic. After the stories of Jango and Boba Fett, another warrior emerges in the
 						Star Wars universe.
 					</p>
 				</div>
 			</motion.div>
+			<motion.div
+				className="header-rating"
+				initial={{ width: 0 }}
+				animate={{ width: '20vw' }}
+				transition={{ duration: 1, type: 'tween', ease: 'easeOut' }}
+			>
+				<div className="item rotten">
+					<img src={rottenTomatoes} />
+					<div className="item-text">
+						<p>93%</p>
+					</div>
+				</div>
+				<div className="item imdb">
+					<img src={imdb} />
+					<div className="item-text">
+						<p>8.8/10</p>
+					</div>
+				</div>
+			</motion.div>
+
 			<div className="scroll">
 				<motion.p
 					initial={{ opacity: 0 }}
@@ -75,5 +80,14 @@ const Header = () => {
 		</header>
 	);
 };
+
+// initial={{ y: 100, opacity: 0 }}
+// animate={{ y: 0, opacity: 1, zIndex: 5 }}
+// transition={{
+// 	type: 'tween',
+// 	ease: 'easeOut',
+// 	delay: 1.5,
+// 	duration: 0.5
+// }}
 
 export default Header;
