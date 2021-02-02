@@ -3,6 +3,22 @@
   src: local("mandalore"), url(../fonts/Mandalore/mandalore.ttf) format("ttf");
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 245, 245, 0.5);
+  border-radius: 10000px;
+}
+
 *,
 *::before,
 *::after {
@@ -29,7 +45,7 @@ body {
   font-family: sans-serif;
   font-family: 'Nunito', sans-serif;
   color: #061729;
-  background-color: #f5f5f5;
+  background-color: #061729;
 }
 
 h1,
@@ -45,6 +61,7 @@ h6 {
 
 .app {
   overflow-y: scroll;
+  scroll-behavior: smooth;
   height: 100vh;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
@@ -155,7 +172,17 @@ h6 {
 .navbar-list-item {
   padding: 2rem;
   list-style: none;
+}
+
+.navbar-list-item a {
+  color: #ffffff;
   font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: .5rem;
+}
+
+.navbar-list-item a:link, .navbar-list-item a:visited {
+  text-decoration: none;
 }
 
 .header {
@@ -451,6 +478,7 @@ h6 {
 .about-description img {
   height: 5rem;
   width: 5rem;
+  margin: 1rem;
 }
 
 .about-description .line {
@@ -461,7 +489,7 @@ h6 {
 
 .about-description p {
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 200;
   width: 70%;
 }
 
@@ -471,10 +499,11 @@ h6 {
   display: grid;
   -ms-grid-columns: 70% 30%;
       grid-template-columns: 70% 30%;
-  -ms-grid-rows: 50% 50%;
-      grid-template-rows: 50% 50%;
+  -ms-grid-rows: 60% 40%;
+      grid-template-rows: 60% 40%;
   background-color: #061729;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .characters-description {
@@ -485,6 +514,19 @@ h6 {
   -ms-grid-row-span: 1;
   grid-row: 1/2;
   padding: 4rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .characters-description h1 {
@@ -493,6 +535,12 @@ h6 {
 
 .characters-description p {
   font-size: 1.8rem;
+  font-weight: 200;
+}
+
+.characters-description .played p:first-child {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .characters-image {
@@ -502,8 +550,8 @@ h6 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .characters-image img {
@@ -551,20 +599,39 @@ h6 {
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-  -ms-grid-rows: 50% 50%;
-      grid-template-rows: 50% 50%;
+  -ms-grid-rows: 45% 45%;
+      grid-template-rows: 45% 45%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0rem 5rem;
+  row-gap: 1rem;
 }
 
 .characters-card {
   position: relative;
 }
 
+.characters-card:hover {
+  cursor: pointer;
+}
+
 .characters-card .title {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 5;
   color: #f5f5f5;
+  font-weight: 800;
+}
+
+.characters-card .backdrop {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #728ba3;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .characters-card img {
@@ -574,6 +641,7 @@ h6 {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 10;
 }
 
 .characters-card img.greef {

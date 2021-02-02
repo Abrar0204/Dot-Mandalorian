@@ -11,8 +11,10 @@ const About = () => {
 		() => {
 			if (inView) {
 				animation.start('visible');
+				// console.log('vsisble about');
 			} else {
 				animation.start('hidden');
+				// console.log('hidden about');
 			}
 		},
 		[ animation, inView ]
@@ -76,7 +78,7 @@ const About = () => {
 	};
 
 	return (
-		<section className="about">
+		<section className="about" id="about">
 			<div className="about-header">
 				<h1>About{backdropOverContentDiv()}</h1>
 				<p>

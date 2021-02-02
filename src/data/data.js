@@ -12,7 +12,7 @@ import gideon from '../res/images/gideon.jpeg';
 import bobba from '../res/images/bobba.jpeg';
 const data = [
 	{
-		name: 'The Mandalorian (Din Djarin)',
+		name: 'Din Djarin',
 		className: 'mando',
 		image: mandalorian,
 		description:

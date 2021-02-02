@@ -11,7 +11,7 @@ const transition = {
 };
 const Header = () => {
 	return (
-		<header className="header">
+		<header className="header" id="home">
 			<motion.div
 				className="header-backdrop left"
 				initial={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', opacity: 1 }}

@@ -40,10 +40,18 @@ const Navbar = () => {
 						transition={transition}
 					>
 						<ul className="navbar-list">
-							<li className="navbar-list-item">Home</li>
-							<li className="navbar-list-item">About</li>
-							<li className="navbar-list-item">Characters</li>
-							<li className="navbar-list-item">Episodes</li>
+							<li className="navbar-list-item" onClick={() => setNavExpanded(false)}>
+								<a href="#home">Home</a>
+							</li>
+							<li className="navbar-list-item" onClick={() => setNavExpanded(false)}>
+								<a href="#about">About</a>
+							</li>
+							<li className="navbar-list-item" onClick={() => setNavExpanded(false)}>
+								<a href="#characters">Characters</a>
+							</li>
+							<li className="navbar-list-item" onClick={() => setNavExpanded(false)}>
+								<a href="#episodes">Episodes</a>
+							</li>
 						</ul>
 					</motion.div>
 				)}
