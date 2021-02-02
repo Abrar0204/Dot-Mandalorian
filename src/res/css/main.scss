@@ -15,11 +15,13 @@ $font-size-body: 1.6rem;
 /* width */
 ::-webkit-scrollbar {
 	width: .5rem;
+	height: .5rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: transparent;
+	background: $color-primary;
+	border-radius: 10000px;
 }
 
 /* Handle */
@@ -507,6 +509,67 @@ h6 {
 			}
 			&.peli {
 				object-position: top;
+			}
+		}
+	}
+}
+
+.episodes {
+	height: 100vh;
+	padding: 5rem 7rem;
+
+	&-header {
+		h1 {
+			font-size: 5rem;
+			color: $color-primary-light;
+		}
+	}
+	.carousel {
+		// background-color: $color-primary-light;
+		scroll-behavior: smooth;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		&-holder {
+			height: 40%;
+			width: 100%;
+			position: relative;
+
+			.arrow {
+				cursor: pointer;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				position: absolute;
+				height: 100%;
+				width: 3rem;
+
+				top: 0;
+				svg {
+					fill: white;
+				}
+				&.left {
+					left: 0;
+					background: linear-gradient(to right, $color-primary 80%, rgba($color-primary, 0.1));
+				}
+				&.right {
+					right: 0;
+					background: linear-gradient(to left, $color-primary 80%, rgba($color-primary, 0.1));
+				}
+			}
+		}
+		.episode {
+			height: 90%;
+			min-width: 25%;
+			background-color: #303e53;
+			margin: 1rem;
+			border-radius: 5px;
+			&.one {
+				margin-left: 4rem;
 			}
 		}
 	}

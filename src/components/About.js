@@ -101,7 +101,7 @@ const About = () => {
 			<div className="about-description">
 				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
 				{/* <motion.img ref={ref} variants={textVariants} initial="hidden" animate={animation} src={grogu} /> */}
-				<GroguIcon ref={ref} inView={inView} />
+				<GroguIcon />
 				<motion.p ref={ref} variants={textVariants} initial="hidden" animate={animation}>
 					Beginning five years after the events of Return of the Jedi and the fall of the Galactic Empire, The
 					Mandalorian follows Din Djarin, a lone Mandalorian bounty hunter in the outer reaches of the galaxy.

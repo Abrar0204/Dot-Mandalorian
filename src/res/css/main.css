@@ -6,11 +6,13 @@
 /* width */
 ::-webkit-scrollbar {
   width: .5rem;
+  height: .5rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #061729;
+  border-radius: 10000px;
 }
 
 /* Handle */
@@ -663,5 +665,82 @@ h6 {
 .characters-card img.peli {
   -o-object-position: top;
      object-position: top;
+}
+
+.episodes {
+  height: 100vh;
+  padding: 5rem 7rem;
+}
+
+.episodes-header h1 {
+  font-size: 5rem;
+  color: #f5f5f5;
+}
+
+.episodes .carousel {
+  scroll-behavior: smooth;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.episodes .carousel-holder {
+  height: 40%;
+  width: 100%;
+  position: relative;
+}
+
+.episodes .carousel-holder .arrow {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 3rem;
+  top: 0;
+}
+
+.episodes .carousel-holder .arrow svg {
+  fill: white;
+}
+
+.episodes .carousel-holder .arrow.left {
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(80%, #061729), to(rgba(6, 23, 41, 0.1)));
+  background: linear-gradient(to right, #061729 80%, rgba(6, 23, 41, 0.1));
+}
+
+.episodes .carousel-holder .arrow.right {
+  right: 0;
+  background: -webkit-gradient(linear, right top, left top, color-stop(80%, #061729), to(rgba(6, 23, 41, 0.1)));
+  background: linear-gradient(to left, #061729 80%, rgba(6, 23, 41, 0.1));
+}
+
+.episodes .carousel .episode {
+  height: 90%;
+  min-width: 25%;
+  background-color: #303e53;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.episodes .carousel .episode.one {
+  margin-left: 4rem;
 }
 /*# sourceMappingURL=main.css.map */

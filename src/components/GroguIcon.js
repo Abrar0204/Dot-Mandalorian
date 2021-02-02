@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-const GroguIcon = ({ ref, inView }) => {
+const GroguIcon = () => {
 	const animation = useAnimation();
-
+	const [ ref, inView, entry ] = useInView({ threshold: 0.1 });
 	useEffect(
 		() => {
 			if (inView) animation.start('visible');
