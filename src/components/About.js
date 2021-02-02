@@ -3,6 +3,7 @@ import AboutHeader from '../res/images/mando 2.png';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import grogu from '../res/svgs/grogu.svg';
+import GroguIcon from './GroguIcon';
 const About = () => {
 	const animation = useAnimation();
 	const [ ref, inView, entry ] = useInView({ threshold: 0.1 });
@@ -88,20 +89,19 @@ const About = () => {
 				</p>
 			</div>
 			<div className="about-image-container">
-				{
-					<motion.div
-						className="backdrop"
-						ref={ref}
-						initial="hidden"
-						variants={imageBackdropVariants}
-						animate={animation}
-						transition={imageBackdropTransition}
-					/>
-				}
+				{/* <motion.div
+					className="backdrop"
+					ref={ref}
+					initial="hidden"
+					variants={imageBackdropVariants}
+					animate={animation}
+					transition={imageBackdropTransition}
+				/> */}
 			</div>
 			<div className="about-description">
 				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
-				<motion.img ref={ref} variants={textVariants} initial="hidden" animate={animation} src={grogu} />
+				{/* <motion.img ref={ref} variants={textVariants} initial="hidden" animate={animation} src={grogu} /> */}
+				<GroguIcon ref={ref} inView={inView} />
 				<motion.p ref={ref} variants={textVariants} initial="hidden" animate={animation}>
 					Beginning five years after the events of Return of the Jedi and the fall of the Galactic Empire, The
 					Mandalorian follows Din Djarin, a lone Mandalorian bounty hunter in the outer reaches of the galaxy.
@@ -111,7 +111,7 @@ const About = () => {
 					protect the infant. While looking to reunite Grogu with his kind, they are pursued by Moff Gideon,
 					who wants to use Grogu's connection to the Force.
 				</motion.p>
-				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
+				<div className="line" />
 			</div>
 		</section>
 	);

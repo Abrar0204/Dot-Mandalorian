@@ -5,18 +5,20 @@ import CharacterCard from './CharacterCard';
 import { motion, useAnimation } from 'framer-motion';
 const Character = () => {
 	const [ selected, setSelected ] = useState(data[0]);
+	const [ selectedIcon, setSelectedIcon ] = useState(data[0].name);
 	const [ ref, inView, entry ] = useInView({ threshold: 0.1 });
 	const animation = useAnimation();
-	const { id, name, image, description, playedBy, className } = selected;
+	const cardAnimation = useAnimation();
+	const { name, image, description, playedBy, className } = selected;
 
 	useEffect(
 		() => {
 			if (inView) {
-				// console.log('visble');
 				animation.start('visible');
+				cardAnimation.start('visible');
 			} else {
 				animation.start('hidden');
-				// console.log('hidede');
+				cardAnimation.start('hidden');
 			}
 		},
 		[ animation, inView ]
@@ -38,8 +40,12 @@ const Character = () => {
 	};
 	const descriptionVariants = {
 		hidden: {
-			x: 200,
-			opacity: 0
+			x: '100vw',
+			opacity: 0,
+			transition: {
+				duration: 0.8,
+				ease: 'easeOut'
+			}
 		},
 		visible: {
 			x: 0,
@@ -57,7 +63,7 @@ const Character = () => {
 				ref={ref}
 				initial="hidden"
 				variants={descriptionVariants}
-				animate={animation}
+				animate={cardAnimation}
 				className="characters-description"
 			>
 				<h1>{name}</h1>
@@ -71,7 +77,7 @@ const Character = () => {
 				ref={ref}
 				initial="hidden"
 				variants={descriptionVariants}
-				animate={animation}
+				animate={cardAnimation}
 				className="characters-image"
 			>
 				<img src={image} className={className} />
@@ -87,8 +93,11 @@ const Character = () => {
 					<CharacterCard
 						character={character}
 						key={character.name}
+						setSelectedIcon={setSelectedIcon}
+						selectedIcon={selectedIcon}
 						setSelected={setSelected}
 						selected={selected}
+						cardAnimation={cardAnimation}
 					/>
 				))}
 			</motion.div>

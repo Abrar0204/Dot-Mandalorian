@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useCycle } from 'framer-motion';
 
-const CharacterCard = ({ character, selected, setSelected }) => {
+const CharacterCard = ({ character, selected, selectedIcon, setSelected, setSelectedIcon, cardAnimation }) => {
 	const { name, image, className } = character;
 
 	const imageVariant = {
@@ -18,18 +18,29 @@ const CharacterCard = ({ character, selected, setSelected }) => {
 		hover: { x: 0, opacity: 1 }
 	};
 
+	const switchCharacter = async () => {
+		if (selected.name !== character.name) {
+			setSelectedIcon(character.name);
+			await cardAnimation.start('hidden');
+
+			setSelected(character);
+			await cardAnimation.start('visible');
+		}
+	};
+
 	return (
 		<motion.div
 			initial="hidden"
 			whileHover="hover"
-			animate={selected.name === name ? 'hover' : {}}
+			animate={selectedIcon === name ? 'hover' : {}}
 			className="characters-card"
-			onClick={() => setSelected(character)}
+			onClick={switchCharacter}
 		>
 			<div className="backdrop" />
 			<motion.img variants={imageVariant} src={image} alt={name} className={className} />
 			<motion.p variants={textVariants} className="title">
 				{name}
+				<span className="backdrop" />
 			</motion.p>
 		</motion.div>
 	);

@@ -2,6 +2,7 @@ $color-primary: #061729;
 $color-primary-light: #f5f5f5;
 $color-red: #ba881d;
 $color-yellow: #edbf17;
+$color-orange: #dda11d;
 $color-text: #ffffff;
 $color-text-primary: #061729;
 $color-text-subtitle: #ccd0d8;
@@ -34,11 +35,7 @@ $font-size-body: 1.6rem;
 	padding: 0;
 	box-sizing: border-box;
 }
-html,
-body {
-	overflow: hidden;
-	height: 100vh;
-}
+
 html {
 	font-size: 62.5%;
 }
@@ -64,18 +61,18 @@ h6 {
 	font-family: 'mandalore', sans-serif;
 }
 
-.app {
-	overflow-y: scroll;
-	scroll-behavior: smooth;
-	height: 100vh;
+// .app {
+// 	overflow-y: scroll;
+// 	scroll-behavior: smooth;
+// 	height: 100vh;
 
-	scroll-snap-type: y mandatory;
+// 	scroll-snap-type: y mandatory;
 
-	header,
-	section {
-		scroll-snap-align: start;
-	}
-}
+// 	header,
+// 	section {
+// 		scroll-snap-align: start;
+// 	}
+// }
 
 .navbar {
 	width: 100%;
@@ -410,6 +407,7 @@ h6 {
 		}
 		p {
 			font-size: 1.8rem;
+			letter-spacing: .1rem;
 			font-weight: 200;
 		}
 		.played {
@@ -465,8 +463,20 @@ h6 {
 			bottom: 0;
 			left: 0;
 
-			color: $color-primary-light;
+			color: $color-primary;
 			font-weight: 800;
+			letter-spacing: .1rem;
+			z-index: 9;
+			.backdrop {
+				clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+				height: 100%;
+				width: 140%;
+				position: absolute;
+				bottom: 0;
+				left: -20%;
+				background-color: $color-primary-light;
+				z-index: -1;
+			}
 		}
 		.backdrop {
 			position: absolute;
