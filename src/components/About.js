@@ -119,34 +119,3 @@ const About = () => {
 };
 
 export default About;
-{
-	/* <div className="backdrop" />
-			<div className="about-image-container">
-				<motion.img
-					ref={ref}
-					variants={imageVariants}
-					animate={animation}
-					initial="hidden"
-					transition={imageBackdropTransition}
-					className="about-image"
-					src={AboutHeader}
-				/>
-				<motion.div
-					ref={ref}
-					initial="hidden"
-					variants={imageBackdropVariants}
-					animate={animation}
-					transition={imageBackdropTransition}
-					className="image-backdrop"
-				/>
-			</div>
-			<div className="about-header-container">
-				<h2 className="about-header">about</h2>
-				<h1 className="about-header">The MaNDALoRIaN</h1>
-			</div>
-			<div className="about-description">
-				<div className="about-description-text">
-					 
-				</div>
-			</div>  */
-}

@@ -153,6 +153,21 @@ h6 {
   z-index: 10;
 }
 
+.navbar-right .close {
+  position: fixed;
+  top: 4.5rem;
+  right: 6rem;
+}
+
+.navbar-right .close:hover {
+  cursor: pointer;
+}
+
+.navbar-right .close svg {
+  height: 4rem;
+  width: 4rem;
+}
+
 .navbar-list {
   height: 100%;
   width: 100%;
@@ -174,17 +189,36 @@ h6 {
 .navbar-list-item {
   padding: 2rem;
   list-style: none;
+  position: relative;
 }
 
 .navbar-list-item a {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: 200;
-  letter-spacing: .5rem;
+  letter-spacing: .7rem;
+  z-index: 12;
 }
 
 .navbar-list-item a:link, .navbar-list-item a:visited {
   text-decoration: none;
+}
+
+.navbar-list-item .backdrop {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 1.5rem;
+  background-color: #303e53;
+  z-index: 10;
+  width: 0%;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotateZ(-5deg);
+          transform: rotateZ(-5deg);
+  opacity: 0;
 }
 
 .header {
