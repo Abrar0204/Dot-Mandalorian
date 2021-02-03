@@ -83,8 +83,9 @@ const About = () => {
 			<div className="about-header">
 				<h1>About{backdropOverContentDiv()}</h1>
 				<p>
-					Hello There, welcome to Dot Mandalorian where you can find all stuff related to the disney plus
-					series The Mandalorian.
+					Dot Mandalorian is an unofficial fansite dedicated to the Disney+ series 'The Mandalorian'. This
+					website was built purely for recreational purposes and is not affiliated with the Disney+ streaming
+					service.
 					{backdropOverContentDiv()}
 				</p>
 			</div>

@@ -10,6 +10,7 @@ import peli from '../res/images/peli.jpg';
 import fennec from '../res/images/fennec.png';
 import gideon from '../res/images/gideon.jpeg';
 import bobba from '../res/images/bobba.jpeg';
+
 const data = [
 	{
 		name: 'Din Djarin',
@@ -97,4 +98,107 @@ const data = [
 		playedBy: 'Temuera Morrison'
 	}
 ];
-export default data;
+
+const seasonOne = [
+	{
+		episode: 1,
+		name: 'The Mandalorian',
+		description: `A Mandalorian bounty hunter tracks a target for a well-paying, mysterious client.`,
+		date: '12/11/2019'
+	},
+	{
+		episode: 2,
+		name: 'The Child',
+		description: `Target in hand, the Mandalorian must now contend with scavengers.`,
+		date: '15/11/2019'
+	},
+	{
+		episode: 3,
+		name: 'The Sin',
+		description: `The battered Mandalorian returns to his client for his reward.`,
+		date: '22/11/2019'
+	},
+	{
+		episode: 4,
+		name: 'Sanctuary',
+		description: `The Mandalorian teams up with an ex-soldier to protect a farming village from raiders.`,
+		date: '29/11/2019'
+	},
+	{
+		episode: 5,
+		name: 'The Gunslinger',
+		description: `On a familiar desert planet, the Mandalorian helps a rookie bounty hunter who is in over his head.`,
+		date: '06/12/2019'
+	},
+	{
+		episode: 6,
+		name: 'The Prisoner',
+		description: `The Mandalorian is part of a crew of mercenaries springing a convict from a prison ship.`,
+		date: '13/12/2019'
+	},
+	{
+		episode: 7,
+		name: 'The Reckoning',
+		description: `An old contact extends an invitation for the Mandalorian to make peace with his enemies.`,
+		date: '18/12/2019'
+	},
+	{
+		episode: 8,
+		name: 'Redemption',
+		description: `The Mandalorian and his allies come to know their true enemy, who already knows much about them.`,
+		date: '27/12/2019'
+	}
+];
+
+const seasonTwo = [
+	{
+		episode: 1,
+		name: 'The Marshal',
+		description: `The Mandalorian is drawn to the Outer Rim in search of others of his kind.`,
+		date: '30/10/2020'
+	},
+	{
+		episode: 2,
+		name: 'The Passenger',
+		description: `The Mandalorian must ferry a passenger with precious cargo on a risky journey.`,
+		date: '06/11/2020'
+	},
+	{
+		episode: 3,
+		name: 'The Heiress',
+		description: `The Mandalorian braves high seas and meets unexpected allies.`,
+		date: '13/11/2020'
+	},
+	{
+		episode: 4,
+		name: 'The Seige',
+		description: `The Mandalorian rejoins old allies for a new mission.`,
+		date: '20/11/2020'
+	},
+	{
+		episode: 5,
+		name: 'The Jedi',
+		description: `The Mandalorian travels to a world ruled by a ruthless magistrate who has made a powerful enemy.`,
+		date: '27/11/2020'
+	},
+	{
+		episode: 6,
+		name: 'The Tragedy',
+		description: `The Mandalorian and Child travel to an ancient site.`,
+		date: '04/12/2020'
+	},
+	{
+		episode: 7,
+		name: 'The Believer',
+		description: `To move against the Empire, the Mandalorian needs the help of an old enemy.`,
+		date: '11/12/2020'
+	},
+	{
+		episode: 8,
+		name: 'The Rescue',
+		description: `The Mandalorian and his allies attempt a daring rescue.`,
+		date: '18/12/2020'
+	}
+];
+
+export { data, seasonOne, seasonTwo };

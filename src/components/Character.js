@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import data from '../data/data';
+import { data } from '../data/data';
 import { useInView } from 'react-intersection-observer';
 import CharacterCard from './CharacterCard';
 import { motion, useAnimation } from 'framer-motion';

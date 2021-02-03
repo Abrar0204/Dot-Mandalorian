@@ -1,6 +1,7 @@
 import About from './components/About';
 import Character from './components/Character';
 import Episodes from './components/Episodes';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 
@@ -11,6 +12,7 @@ const App = () => {
 			<About />
 			<Character />
 			<Episodes />
+			<Footer />
 		</div>
 	);
 };

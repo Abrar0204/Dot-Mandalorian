@@ -30,14 +30,13 @@ const Header = () => {
 				<div className="header-text">
 					<h1 className="header-text-large">
 						<motion.span animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
-						<span className="the">The</span>
+						<span className="the">Dot</span>
 						MaNDALoRIaN
 					</h1>
 					<p className="header-text-medium">
 						<motion.span animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
-						The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority
-						of the New Republic. After the stories of Jango and Boba Fett, another warrior emerges in the
-						Star Wars universe.
+						Hello there fellow traveler, Welcome to Dot Mandalorian, where you can find some cool stuff
+						related to the Disney+ series The Mandalorian.
 					</p>
 				</div>
 			</motion.div>
