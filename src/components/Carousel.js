@@ -8,7 +8,7 @@ const Carousel = ({ season, seasonData }) => {
 
 	return (
 		<div className={season === 1 ? 'seasonOne' : 'seasonTwo'}>
-			<h1>{season == 1 ? 'Season 1' : 'Season 2'}</h1>
+			<h1>{season === 1 ? 'Season 1' : 'Season 2'}</h1>
 			<div className="carousel-holder">
 				<CarouselArrow season={season} direction="left" />
 

@@ -2,19 +2,29 @@ import React from 'react';
 
 const CarouselArrow = ({ direction, season }) => {
 	const scrollLeft = () => {
+		let carousel;
 		if (season === 1) {
-			var carousel = document.querySelector('.season-one');
+			carousel = document.querySelector('.season-one');
 		} else {
-			var carousel = document.querySelector('.season-two');
+			carousel = document.querySelector('.season-two');
+		}
+
+		if (carousel.scrollLeft === 0) {
+			carousel.scrollLeft += carousel.scrollWidth;
 		}
 
 		carousel.scrollLeft -= 370;
 	};
 	const scrollRight = () => {
+		let carousel;
 		if (season === 1) {
-			var carousel = document.querySelector('.season-one');
+			carousel = document.querySelector('.season-one');
 		} else {
-			var carousel = document.querySelector('.season-two');
+			carousel = document.querySelector('.season-two');
+		}
+
+		if (carousel.scrollWidth - carousel.clientWidth - carousel.scrollLeft < 3) {
+			carousel.scrollLeft -= carousel.scrollLeft;
 		}
 
 		carousel.scrollLeft += 370;

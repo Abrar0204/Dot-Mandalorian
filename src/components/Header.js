@@ -3,11 +3,9 @@ import Navbar from './Navbar';
 
 import { motion } from 'framer-motion';
 
-import rottenTomatoes from '../res/images/rottenTomatoesFresh.png';
-import imdb from '../res/images/imdb.png';
-
 const transition = {
-	duration: 1.5
+	duration: 1.5,
+	delay: 4
 };
 const Header = () => {
 	return (
@@ -29,42 +27,50 @@ const Header = () => {
 			<motion.div className="header-content">
 				<div className="header-text">
 					<h1 className="header-text-large">
-						<motion.span animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
+						<motion.span
+							animate={{ width: '0%' }}
+							transition={{ duration: 1.5, delay: 4 }}
+							className="backdrop"
+						/>
 						<span className="the">Dot</span>
 						MaNDALoRIaN
 					</h1>
 					<p className="header-text-medium">
-						<motion.span animate={{ width: '0%' }} transition={{ duration: 1.5 }} className="backdrop" />
+						<motion.span
+							animate={{ width: '0%' }}
+							transition={{ duration: 1.5, delay: 4 }}
+							className="backdrop"
+						/>
 						Hello there fellow traveler, Welcome to Dot Mandalorian, where you can find some cool stuff
 						related to the Disney+ series The Mandalorian.
 					</p>
 				</div>
 			</motion.div>
-			<motion.div
+			{/* <motion.div
 				className="header-rating"
 				initial={{ width: 0 }}
 				animate={{ width: '20vw' }}
 				transition={{ duration: 1, type: 'tween', ease: 'easeOut' }}
 			>
 				<div className="item rotten">
-					<img src={rottenTomatoes} />
+					<img src={rottenTomatoes} alt="Rotten Tomatoes" />
 					<div className="item-text">
 						<p>93%</p>
 					</div>
 				</div>
 				<div className="item imdb">
-					<img src={imdb} />
+					<img src={imdb} alt="IMDb" />
 					<div className="item-text">
 						<p>8.8/10</p>
 					</div>
 				</div>
-			</motion.div>
+			</motion.div> */}
 
 			<div className="scroll">
 				<motion.p
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
-					transition={{ delay: 1.5, type: 'tween', ease: 'easeIn' }}
+					transition={{ delay: 5.5, type: 'tween', ease: 'easeIn' }}
 					className="scroll-header"
 				>
 					Scroll
@@ -72,7 +78,7 @@ const Header = () => {
 				<motion.div
 					initial={{ height: 0 }}
 					animate={{ height: '8vh' }}
-					transition={{ delay: 1.5, type: 'tween', ease: 'easeIn' }}
+					transition={{ delay: 5.5, type: 'tween', ease: 'easeIn' }}
 					className="scroll-line"
 				/>
 			</div>

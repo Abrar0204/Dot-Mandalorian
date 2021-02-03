@@ -7,6 +7,12 @@ $color-text: #ffffff;
 $color-text-primary: #061729;
 $color-text-subtitle: #ccd0d8;
 $font-size-body: 1.6rem;
+
+$smallLaptop: 900px;
+$tablet: 680px;
+$largeMobile: 430px;
+$smallMobile: 350px;
+
 @font-face {
 	font-family: 'mandalore';
 	src: local('mandalore'), url(../fonts/Mandalore/mandalore.ttf) format('ttf');
@@ -45,6 +51,18 @@ body {
 
 html {
 	font-size: 62.5%;
+	@media only screen and (max-width: $smallLaptop) {
+		font-size: 55%;
+	}
+	@media only screen and (max-width: $tablet) {
+		font-size: 50%;
+	}
+	@media only screen and (max-width: $largeMobile) {
+		font-size: 45%;
+	}
+	@media only screen and (max-width: $smallMobile) {
+		font-size: 40%;
+	}
 }
 
 body {
@@ -81,6 +99,22 @@ h6 {
 	}
 }
 
+.splash-screen {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $color-primary;
+	z-index: 15;
+	svg {
+		width: 50vw;
+	}
+}
+
 .navbar {
 	width: 100%;
 	display: flex;
@@ -89,35 +123,33 @@ h6 {
 	padding: 0rem 7rem;
 	height: 15vh;
 	position: relative;
+	@media only screen and (max-width: $tablet) {
+		padding: 0rem 2rem;
+	}
 	&-logo {
 		z-index: 15;
 		img {
 			height: 7rem;
 			width: 7rem;
+			@media only screen and (max-width: $tablet) {
+				height: 5rem;
+				width: 5rem;
+			}
 		}
 	}
 	&-menu {
-		width: 5rem;
 		z-index: 10;
-		&:hover {
-			cursor: pointer;
-			.bar {
-				margin: .75rem 0rem;
+		img {
+			height: 4rem;
+			width: 4rem;
+			@media only screen and (max-width: $tablet) {
+				height: 3.5rem;
+				width: 3.5rem;
 			}
 		}
-		.bar {
-			width: 100%;
-			background-color: white;
-			height: .25rem;
-			margin: 1rem 0rem;
-			border-radius: 1000px;
-			transition: margin .5s ease;
-			&.two {
-				width: 60%;
-			}
-			&.three {
-				width: 80%;
-			}
+
+		&:hover {
+			cursor: pointer;
 		}
 	}
 
@@ -129,9 +161,15 @@ h6 {
 		height: 100vh;
 		width: 50%;
 		z-index: 10;
-		background-image: url(../images/Navbar-Image.jpg);
+		background-image: url(../images/webp/Navbar-Image.webp);
 		background-size: cover;
-		background-position: center;
+		background-position: left;
+		@media only screen and (max-width: $smallLaptop) {
+			background-position: 30%;
+		}
+		@media only screen and (max-width: $tablet) {
+			display: none;
+		}
 	}
 	&-right {
 		position: fixed;
@@ -141,10 +179,17 @@ h6 {
 		height: 100vh;
 		width: 50%;
 		z-index: 10;
+		@media only screen and (max-width: $tablet) {
+			width: 100%;
+		}
 		.close {
 			position: fixed;
 			top: 4.5rem;
 			right: 6rem;
+			@media only screen and (max-width: $largeMobile) {
+				top: 6rem;
+				right: 5rem;
+			}
 			&:hover {
 				cursor: pointer;
 			}
@@ -177,6 +222,9 @@ h6 {
 				letter-spacing: .7rem;
 
 				z-index: 12;
+				@media only screen and (max-width: $smallLaptop) {
+					font-size: 4rem;
+				}
 			}
 			.backdrop {
 				position: absolute;
@@ -198,7 +246,7 @@ h6 {
 	width: 100%;
 	height: 100vh;
 
-	background-image: url(../images/Header-Background.jpg);
+	background-image: url(../images/webp/Header-Background.webp);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -214,7 +262,9 @@ h6 {
 		align-items: flex-start;
 		padding: 3rem 7rem;
 		height: 100%;
-
+		@media only screen and (max-width: $tablet) {
+			padding: 3rem 2rem;
+		}
 		&-large {
 			font-size: 15rem;
 			line-height: 0.9;
@@ -222,6 +272,12 @@ h6 {
 			margin: 1rem 0rem;
 			position: relative;
 			color: $color-primary-light;
+			@media only screen and (max-width: $tablet) {
+				font-size: 10rem;
+			}
+			@media only screen and (max-width: $smallMobile) {
+				font-size: 8rem;
+			}
 			span {
 				display: block;
 				font-size: 3rem;
@@ -241,6 +297,9 @@ h6 {
 			z-index: 5;
 			position: relative;
 			color: $color-text-subtitle;
+			@media only screen and (max-width: $tablet) {
+				width: 80%;
+			}
 			.backdrop {
 				position: absolute;
 				height: 100%;
@@ -260,6 +319,7 @@ h6 {
 
 		top: 0;
 		width: 50%;
+
 		&.filter {
 			width: 100%;
 			background-color: black;
@@ -268,18 +328,20 @@ h6 {
 		&.left {
 			z-index: 4;
 			left: 0;
-			background-image: url(../images/Header-Left-2.jpg);
+			background-image: url(../images/webp/Header-Left-2.webp);
 			background-size: cover;
-			background-position: center;
+
 			clip-path: polygon(0 0, 70% 0%, 25% 100%, 0 100%);
+			background-position: 30%;
 		}
 		&.right {
 			right: 0;
 			z-index: 5;
-			background-image: url(../images/Header-Right.jpg);
+			background-image: url(../images/webp/Header-Right.webp);
 			background-size: cover;
-			background-position: center;
+
 			clip-path: polygon(60% 0, 100% 0%, 100% 100%, 25% 100%);
+			background-position: 60%;
 		}
 	}
 
@@ -340,11 +402,14 @@ h6 {
 
 .about {
 	display: grid;
-	grid-template-columns: 30% 70%;
+	grid-template-columns: 35% 65%;
 	grid-template-rows: 50% 50%;
 	height: 100vh;
 	background-color: $color-primary;
 	color: $color-text;
+	@media only screen and (max-width: $smallLaptop) {
+		grid-template-columns: 100%;
+	}
 	&-header {
 		grid-row: 1/2;
 		grid-column: 1/2;
@@ -355,6 +420,9 @@ h6 {
 		justify-content: center;
 		align-items: flex-start;
 		color: $color-primary;
+		@media only screen and (max-width: $smallLaptop) {
+			display: none;
+		}
 		h1 {
 			font-size: 7rem;
 			position: relative;
@@ -369,7 +437,6 @@ h6 {
 			}
 		}
 		p {
-			font-size: 1.8rem;
 			position: relative;
 			margin: .5rem 0rem;
 			.backdrop {
@@ -385,8 +452,12 @@ h6 {
 	&-image-container {
 		grid-row: 2/3;
 		grid-column: 1/2;
-		background-image: url(../images/About-Background.jpg);
+		background-image: url(../images/webp/About-Background.webp);
 		background-size: cover;
+		background-position: center;
+		@media only screen and (max-width: $smallLaptop) {
+			display: none;
+		}
 		.backdrop {
 			height: 100%;
 			width: 100%;
@@ -401,6 +472,9 @@ h6 {
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		@media only screen and (max-width: $smallLaptop) {
+			grid-column: 1/2;
+		}
 		img {
 			height: 5rem;
 			width: 5rem;
@@ -409,12 +483,18 @@ h6 {
 		.line {
 			width: .25rem;
 			background-color: $color-text;
-			height: 20%;
+			height: 15rem;
 		}
 		p {
-			font-size: 2.5rem;
+			font-size: 2rem;
 			font-weight: 200;
 			width: 70%;
+			@media only screen and (max-width: $smallLaptop) {
+				font-size: 2.2rem;
+			}
+			@media only screen and (max-width: $tablet) {
+				width: 90%;
+			}
 		}
 	}
 }
@@ -427,6 +507,12 @@ h6 {
 	background-color: $color-primary;
 	color: $color-text;
 	overflow: hidden;
+	@media only screen and (max-width: $tablet) {
+		grid-template-rows: 70% 30%;
+	}
+	@media only screen and (max-width: $largeMobile) {
+		grid-template-rows: 50% 50%;
+	}
 	&-description {
 		grid-column: 1/2;
 		grid-row: 1/2;
@@ -435,14 +521,23 @@ h6 {
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: flex-start;
-
+		z-index: 5;
+		@media only screen and (max-width: $tablet) {
+			grid-column: 1/3;
+		}
 		h1 {
 			font-size: 5rem;
 		}
 		p {
-			font-size: 1.8rem;
+			font-size: 1.7rem;
 			letter-spacing: .1rem;
 			font-weight: 200;
+			@media only screen and (max-width: $tablet) {
+				font-size: 2rem;
+			}
+			@media only screen and (max-width: $largeMobile) {
+				font-size: 1.6rem;
+			}
 		}
 		.played {
 			p:first-child {
@@ -454,12 +549,35 @@ h6 {
 	&-image {
 		grid-column: 2/3;
 		grid-row: 1/2;
+		position: relative;
 		clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+		@media only screen and (max-width: $tablet) {
+			z-index: 4;
+			grid-column: 1/3;
+			clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+		}
+		.backdrop {
+			display: none;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background-color: black;
+			opacity: .5;
+			@media only screen and (max-width: $tablet) {
+				display: block;
+			}
+		}
 		img {
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
 			object-position: center;
+			&.mando {
+				object-position: 70%;
+			}
 			&.greef {
 				object-position: top;
 			}
@@ -473,7 +591,7 @@ h6 {
 				object-position: top;
 			}
 			&.peli {
-				object-position: top;
+				object-position: 10% 20%;
 			}
 		}
 	}
@@ -486,9 +604,18 @@ h6 {
 		align-content: center;
 		padding: 0rem 5rem;
 		row-gap: 1rem;
+		@media only screen and (max-width: $tablet) {
+			padding: 0rem 1rem;
+		}
+		@media only screen and (max-width: $largeMobile) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 30% 30% 30%;
+			row-gap: 1rem;
+		}
 	}
 	&-card {
 		position: relative;
+
 		&:hover {
 			cursor: pointer;
 		}
@@ -501,6 +628,9 @@ h6 {
 			font-weight: 800;
 			letter-spacing: .1rem;
 			z-index: 9;
+			@media only screen and (max-width: $tablet) {
+				display: none;
+			}
 			.backdrop {
 				clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 				height: 100%;
@@ -527,6 +657,9 @@ h6 {
 			height: 100%;
 			object-fit: cover;
 			z-index: 10;
+			&.mando {
+				object-position: 80%;
+			}
 			&.greef {
 				object-position: top;
 			}
@@ -540,7 +673,7 @@ h6 {
 				object-position: top;
 			}
 			&.peli {
-				object-position: top;
+				object-position: 10% 20%;
 			}
 		}
 	}
@@ -549,7 +682,12 @@ h6 {
 .episodes {
 	height: 100vh;
 	padding: 5rem 7rem;
-
+	@media only screen and (max-width: $largeMobile) {
+		padding: 5rem 3rem;
+	}
+	@media only screen and (max-width: $smallMobile) {
+		padding: 5rem 1rem;
+	}
 	.seasonOne,
 	.seasonTwo {
 		height: 50%;
@@ -567,46 +705,40 @@ h6 {
 		justify-content: flex-start;
 		align-items: center;
 		overflow: hidden;
+
 		min-height: 100%;
 		height: 100%;
 		min-width: 100%;
 		width: 100%;
+
 		&-holder {
 			min-height: 80%;
 			height: 80%;
 			min-width: 100%;
 			width: 100%;
 			position: relative;
-
+			display: grid;
+			grid-template-columns: 3rem 1fr 3rem;
+			grid-template-rows: 100%;
 			.arrow {
 				cursor: pointer;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				z-index: 1;
-				position: absolute;
+
 				height: 100%;
 				width: 3rem;
 
-				top: 0;
 				svg {
 					fill: white;
-				}
-				&.left {
-					left: 0;
-					background: linear-gradient(to right, $color-primary 70%, rgba($color-primary, 0.1));
-				}
-				&.right {
-					right: 0;
-					background: linear-gradient(to left, $color-primary 70%, rgba($color-primary, 0.1));
 				}
 			}
 		}
 		.episode {
-			min-height: 7rem;
 			height: 90%;
 
-			min-width: 35rem;
+			min-width: 200px;
 			width: 25%;
 			background-color: #303e53;
 			margin: 1rem;
@@ -620,8 +752,9 @@ h6 {
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: flex-start;
-			&.one {
-				margin-left: 4rem;
+			@media only screen and (max-width: $largeMobile) {
+				// min-width: 23rem;
+				height: 80%;
 			}
 
 			.title {

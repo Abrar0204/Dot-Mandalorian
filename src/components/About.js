@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import AboutHeader from '../res/images/mando 2.png';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
-import grogu from '../res/svgs/grogu.svg';
 import GroguIcon from './GroguIcon';
 const About = () => {
 	const animation = useAnimation();
-	const [ ref, inView, entry ] = useInView({ threshold: 0.1 });
+	const [ ref, inView ] = useInView({ threshold: 0.1 });
 
 	useEffect(
 		() => {

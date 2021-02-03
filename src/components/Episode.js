@@ -1,5 +1,4 @@
 import React from 'react';
-import { data } from '../data/data';
 
 const Episode = ({ episodeData }) => {
 	const { name, episode, description, date } = episodeData;

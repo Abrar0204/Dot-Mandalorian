@@ -3,10 +3,11 @@ import { data } from '../data/data';
 import { useInView } from 'react-intersection-observer';
 import CharacterCard from './CharacterCard';
 import { motion, useAnimation } from 'framer-motion';
+
 const Character = () => {
 	const [ selected, setSelected ] = useState(data[0]);
 	const [ selectedIcon, setSelectedIcon ] = useState(data[0].name);
-	const [ ref, inView, entry ] = useInView({ threshold: 0.1 });
+	const [ ref, inView ] = useInView({ threshold: 0.1 });
 	const animation = useAnimation();
 	const cardAnimation = useAnimation();
 	const { name, image, description, playedBy, className } = selected;
@@ -21,7 +22,7 @@ const Character = () => {
 				cardAnimation.start('hidden');
 			}
 		},
-		[ animation, inView ]
+		[ animation, inView, cardAnimation ]
 	);
 
 	const selectorVariants = {
@@ -80,7 +81,8 @@ const Character = () => {
 				animate={cardAnimation}
 				className="characters-image"
 			>
-				<img src={image} className={className} />
+				<img src={image} className={className} alt={name} />
+				<div className="backdrop" />
 			</motion.div>
 			<motion.div
 				className="characters-selector"

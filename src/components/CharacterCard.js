@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useCycle } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const CharacterCard = ({ character, selected, selectedIcon, setSelected, setSelectedIcon, cardAnimation }) => {
 	const { name, image, className } = character;

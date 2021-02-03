@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import disneyLogo from '../res/svgs/Disney.svg';
 import { motion, AnimatePresence } from 'framer-motion';
+import menu from '../res/svgs/Menu.svg';
 
 const transition = {
 	type: 'tween',
@@ -36,9 +37,7 @@ const Navbar = () => {
 			</div>
 
 			<div className="navbar-menu" onClick={() => setNavExpanded(true)}>
-				<div className={navExpanded ? 'bar one expanded' : 'bar one'} />
-				<div className={navExpanded ? 'bar two expanded' : 'bar two'} />
-				<div className={navExpanded ? 'bar three expanded' : 'bar three'} />
+				<img src={menu} alt="Menu" />
 			</div>
 
 			<AnimatePresence exitBeforeEnter>
