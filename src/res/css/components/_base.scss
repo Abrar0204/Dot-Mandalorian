@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'mandalore';
-	src: local('mandalore'), url(../fonts/Mandalore/mandalore.ttf) format('ttf');
+	src: local('mandalore'), url(../fonts/Mandalore/mandalore-webfont.woff) format('woff');
 }
 
 /* width */
@@ -31,13 +31,12 @@
 html,
 body {
 	overflow: hidden;
-	height: 100vh;
+	height: -webkit-fill-available;
 }
 
 html {
 	font-size: 62.5%;
 	//Mobile Css fix
-	height: -webkit-fill-available;
 
 	@media only screen and (max-width: $smallLaptop) {
 		font-size: 55%;
@@ -62,8 +61,6 @@ body {
 	color: $color-primary;
 	background-color: $color-primary;
 	//Mobile viewport fix
-	min-height: 100vh;
-	min-height: -webkit-fill-available;
 }
 
 h1,

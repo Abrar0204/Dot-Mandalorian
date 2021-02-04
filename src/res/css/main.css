@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'mandalore';
-  src: local("mandalore"), url(../fonts/Mandalore/mandalore.ttf) format("ttf");
+  src: local("mandalore"), url(../fonts/Mandalore/mandalore-webfont.woff) format("woff");
 }
 
 /* width */
@@ -33,12 +33,11 @@
 html,
 body {
   overflow: hidden;
-  height: 100vh;
+  height: -webkit-fill-available;
 }
 
 html {
   font-size: 62.5%;
-  height: -webkit-fill-available;
 }
 
 @media only screen and (max-width: 900px) {
@@ -73,8 +72,6 @@ body {
   font-family: 'Nunito', sans-serif;
   color: #061729;
   background-color: #061729;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 h1,
