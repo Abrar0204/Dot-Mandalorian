@@ -38,6 +38,7 @@ const GroguIcon = () => {
 
 	return (
 		<motion.svg
+			className="grogu-icon"
 			ref={ref}
 			variants={svgVariants}
 			initial="hidden"

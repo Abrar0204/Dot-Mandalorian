@@ -87,19 +87,10 @@ const About = () => {
 					{backdropOverContentDiv()}
 				</p>
 			</div>
-			<div className="about-image-container">
-				{/* <motion.div
-					className="backdrop"
-					ref={ref}
-					initial="hidden"
-					variants={imageBackdropVariants}
-					animate={animation}
-					transition={imageBackdropTransition}
-				/> */}
-			</div>
+			<div className="about-image-container" />
 			<div className="about-description">
 				<motion.div variants={lineVariants} initial="hidden" animate={animation} ref={ref} className="line" />
-				{/* <motion.img ref={ref} variants={textVariants} initial="hidden" animate={animation} src={grogu} /> */}
+
 				<GroguIcon />
 				<motion.p ref={ref} variants={textVariants} initial="hidden" animate={animation}>
 					Beginning five years after the events of Return of the Jedi and the fall of the Galactic Empire, The

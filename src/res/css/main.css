@@ -34,6 +34,24 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (min-width: 1920px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  html {
+    font-size: 170%;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   html {
     font-size: 55%;
@@ -623,10 +641,9 @@ h6 {
   }
 }
 
-.about-description img {
+.about-description .grogu-icon {
   height: 5rem;
   width: 5rem;
-  margin: 1rem;
 }
 
 .about-description .line {

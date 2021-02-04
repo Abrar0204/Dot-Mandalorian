@@ -50,6 +50,16 @@
 html {
 	font-size: 62.5%;
 
+	@media only screen and (min-width: 1920px) {
+		font-size: 90%;
+	}
+	@media only screen and (min-width: 2560px) {
+		font-size: 120%;
+	}
+	@media only screen and (min-width: 3840px) {
+		font-size: 170%;
+	}
+
 	@media only screen and (max-width: $smallLaptop) {
 		font-size: 55%;
 	}
