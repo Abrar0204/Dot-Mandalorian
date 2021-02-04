@@ -349,7 +349,7 @@ h6 {
 .header-text-large .backdrop {
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 80%;
   top: 0;
   left: 0;
   background-color: #061729;

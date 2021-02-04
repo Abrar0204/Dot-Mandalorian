@@ -46,25 +46,6 @@ const Header = () => {
 					</p>
 				</div>
 			</motion.div>
-			{/* <motion.div
-				className="header-rating"
-				initial={{ width: 0 }}
-				animate={{ width: '20vw' }}
-				transition={{ duration: 1, type: 'tween', ease: 'easeOut' }}
-			>
-				<div className="item rotten">
-					<img src={rottenTomatoes} alt="Rotten Tomatoes" />
-					<div className="item-text">
-						<p>93%</p>
-					</div>
-				</div>
-				<div className="item imdb">
-					<img src={imdb} alt="IMDb" />
-					<div className="item-text">
-						<p>8.8/10</p>
-					</div>
-				</div>
-			</motion.div> */}
 
 			<div className="scroll">
 				<motion.p
