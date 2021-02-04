@@ -1,0 +1,15 @@
+.splash-screen {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $color-primary;
+	z-index: 15;
+	svg {
+		width: 50vw;
+	}
+}

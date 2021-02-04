@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './res/css/main.min.css';
 import App from './App';
+import './res/fonts/Mandalore/mandalore.ttf';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

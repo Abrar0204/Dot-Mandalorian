@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import disneyLogo from '../res/svgs/Disney.svg';
+import mandoIcon from '../res/svgs/Mando-Icon.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 import menu from '../res/svgs/Menu.svg';
 
@@ -8,6 +8,7 @@ const transition = {
 	ease: 'easeOut',
 	duration: 0.75
 };
+
 const Navbar = () => {
 	const [ navExpanded, setNavExpanded ] = useState(false);
 
@@ -33,7 +34,7 @@ const Navbar = () => {
 	return (
 		<nav className="navbar">
 			<div className="navbar-logo">
-				<img src={disneyLogo} alt="Disney Logo" />
+				<img src={mandoIcon} alt="Disney Logo" />
 			</div>
 
 			<div className="navbar-menu" onClick={() => setNavExpanded(true)}>

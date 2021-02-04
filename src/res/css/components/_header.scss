@@ -1,0 +1,157 @@
+.header {
+	width: 100%;
+	height: 100vh;
+
+	background-image: url(../images/webp/Header-Background.webp);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+
+	z-index: 5;
+	&-content {
+		height: 85vh;
+	}
+	&-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 3rem 7rem;
+		height: 100%;
+		@media only screen and (max-width: $tablet) {
+			padding: 3rem 2rem;
+		}
+		&-large {
+			font-size: 15rem;
+			line-height: 0.9;
+			z-index: 5;
+			margin: 1rem 0rem;
+			position: relative;
+			color: $color-primary-light;
+			@media only screen and (max-width: $tablet) {
+				font-size: 10rem;
+			}
+			@media only screen and (max-width: $smallMobile) {
+				font-size: 8rem;
+			}
+			span {
+				display: block;
+				font-size: 3rem;
+			}
+			.backdrop {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				background-color: #061729;
+				z-index: 6;
+			}
+		}
+		&-medium {
+			width: 40%;
+			z-index: 5;
+			position: relative;
+			color: $color-text-subtitle;
+			@media only screen and (max-width: $tablet) {
+				width: 80%;
+			}
+			.backdrop {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				background-color: #061729;
+				z-index: 6;
+			}
+		}
+	}
+
+	&-backdrop {
+		position: absolute;
+		height: 100%;
+		background-color: black;
+
+		top: 0;
+		width: 50%;
+
+		&.filter {
+			width: 100%;
+			background-color: black;
+			opacity: .2;
+		}
+		&.left {
+			z-index: 4;
+			left: 0;
+			background-image: url(../images/webp/Header-Left-2.webp);
+			background-size: cover;
+
+			clip-path: polygon(0 0, 70% 0%, 25% 100%, 0 100%);
+			background-position: 30%;
+		}
+		&.right {
+			right: 0;
+			z-index: 5;
+			background-image: url(../images/webp/Header-Right.webp);
+			background-size: cover;
+
+			clip-path: polygon(60% 0, 100% 0%, 100% 100%, 25% 100%);
+			background-position: 60%;
+		}
+	}
+
+	.scroll {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&-header {
+			letter-spacing: .2rem;
+			color: $color-primary-light;
+		}
+		&-line {
+			height: 8vh;
+			background-color: white;
+			width: .1rem;
+			flex-grow: 1;
+		}
+	}
+	&-rating {
+		position: absolute;
+		z-index: 5;
+		bottom: 5rem;
+		right: 5rem;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 20vw;
+		background-color: rgba($color-primary, $alpha: 0.5);
+		padding: 1.5rem 2rem;
+		transform: skewX(-20deg);
+
+		.item {
+			transform: skewX(20deg);
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+			&.rotten {
+				p:first-child {
+					color: $color-red;
+				}
+			}
+			&.imdb {
+				p:first-child {
+					color: $color-yellow;
+				}
+			}
+			&-text {
+				margin: 0rem 1rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,127 @@
+.navbar {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0rem 7rem;
+	height: 15vh;
+	position: relative;
+	@media only screen and (max-width: $tablet) {
+		padding: 0rem 2rem;
+	}
+	&-logo {
+		z-index: 15;
+		img {
+			height: 5rem;
+			width: 5rem;
+			@media only screen and (max-width: $tablet) {
+				height: 4rem;
+				width: 4rem;
+			}
+		}
+	}
+	&-menu {
+		z-index: 10;
+		img {
+			height: 4rem;
+			width: 4rem;
+			@media only screen and (max-width: $tablet) {
+				height: 3.5rem;
+				width: 3.5rem;
+			}
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&-left {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: black;
+		height: 100vh;
+		width: 50%;
+		z-index: 10;
+		background-image: url(../images/webp/Navbar-Image.webp);
+		background-size: cover;
+		background-position: left;
+		@media only screen and (max-width: $smallLaptop) {
+			background-position: 30%;
+		}
+		@media only screen and (max-width: $tablet) {
+			display: none;
+		}
+	}
+	&-right {
+		position: fixed;
+		top: 0;
+		right: 0;
+		background-color: $color-primary;
+		height: 100vh;
+		width: 50%;
+		z-index: 10;
+		@media only screen and (max-width: $tablet) {
+			width: 100%;
+		}
+		.close {
+			position: fixed;
+			top: 4.5rem;
+			right: 6rem;
+			@media only screen and (max-width: $largeMobile) {
+				top: 6rem;
+				right: 5rem;
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			svg {
+				height: 4rem;
+				width: 4rem;
+			}
+		}
+	}
+	&-list {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&-item {
+			padding: 2rem;
+			list-style: none;
+			position: relative;
+			a {
+				&:link,
+				&:visited {
+					text-decoration: none;
+				}
+				color: $color-text;
+				font-size: 6rem;
+				font-weight: 200;
+				letter-spacing: .7rem;
+
+				z-index: 12;
+				@media only screen and (max-width: $smallLaptop) {
+					font-size: 4rem;
+				}
+			}
+			.backdrop {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 1.5rem;
+				background-color: #303e53;
+				z-index: 10;
+				width: 0%;
+				transform-origin: 50% 50%;
+				transform: rotateZ(-5deg);
+				opacity: 0;
+			}
+		}
+	}
+}

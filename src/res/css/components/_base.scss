@@ -1,0 +1,91 @@
+@font-face {
+	font-family: 'mandalore';
+	src: local('mandalore'), url(../fonts/Mandalore/mandalore.ttf) format('ttf');
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: .5rem;
+	height: .5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: $color-primary;
+	border-radius: 10000px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba($color-primary-light, 0.5);
+	border-radius: 10000px;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	overflow: hidden;
+	height: 100vh;
+}
+
+html {
+	font-size: 62.5%;
+	//Mobile Css fix
+	height: -webkit-fill-available;
+
+	@media only screen and (max-width: $smallLaptop) {
+		font-size: 55%;
+	}
+	@media only screen and (max-width: $tablet) {
+		font-size: 50%;
+	}
+	@media only screen and (max-width: $largeMobile) {
+		font-size: 45%;
+	}
+	@media only screen and (max-width: $smallMobile) {
+		font-size: 40%;
+	}
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: sans-serif;
+	font-family: 'Nunito', sans-serif;
+	color: $color-primary;
+	background-color: $color-primary;
+	//Mobile viewport fix
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 400;
+	font-size: 1.6rem;
+	font-family: 'mandalore', sans-serif;
+}
+
+.app {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	height: 100vh;
+
+	scroll-snap-type: y proximity;
+
+	header,
+	section {
+		scroll-snap-align: start;
+	}
+}
