@@ -33,7 +33,7 @@
 html,
 body {
   overflow: hidden;
-  height: -webkit-fill-available;
+  height: 100vh;
 }
 
 html {

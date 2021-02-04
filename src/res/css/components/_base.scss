@@ -31,12 +31,11 @@
 html,
 body {
 	overflow: hidden;
-	height: -webkit-fill-available;
+	height: 100vh;
 }
 
 html {
 	font-size: 62.5%;
-	//Mobile Css fix
 
 	@media only screen and (max-width: $smallLaptop) {
 		font-size: 55%;
@@ -60,7 +59,6 @@ body {
 	font-family: 'Nunito', sans-serif;
 	color: $color-primary;
 	background-color: $color-primary;
-	//Mobile viewport fix
 }
 
 h1,
