@@ -28,11 +28,24 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-html,
-body {
-	overflow: hidden;
-	height: 100vh;
-}
+//Scroll snap
+// html,
+// body {
+// 	overflow: hidden;
+// 	height: 100vh;
+// }
+// .app {
+// 	overflow-y: scroll;
+// 	scroll-behavior: smooth;
+// 	height: 100vh;
+
+// 	scroll-snap-type: y proximity;
+
+// 	header,
+// 	section {
+// 		scroll-snap-align: start;
+// 	}
+// }
 
 html {
 	font-size: 62.5%;
@@ -70,17 +83,4 @@ h6 {
 	font-weight: 400;
 	font-size: 1.6rem;
 	font-family: 'mandalore', sans-serif;
-}
-
-.app {
-	overflow-y: scroll;
-	scroll-behavior: smooth;
-	height: 100vh;
-
-	scroll-snap-type: y proximity;
-
-	header,
-	section {
-		scroll-snap-align: start;
-	}
 }
