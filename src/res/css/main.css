@@ -32,6 +32,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 @media only screen and (min-width: 1920px) {
@@ -298,6 +299,7 @@ h6 {
   -webkit-transform: rotateZ(-5deg);
           transform: rotateZ(-5deg);
   opacity: 0;
+  pointer-events: none;
 }
 
 .header {
